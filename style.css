@@ -1,0 +1,47 @@
+body { 
+    background-color: #121212;
+    display: grid;
+    grid-template-rows: auto 1fr 1fr auto;
+    min-height: 100vh;
+    margin: 0;
+}
+
+@font-face {
+    font-family: FantasqueSansMonoRegular;
+    src: url(FantasqueSans/TTF/FantasqueSansMono-Regular.ttf);
+}
+
+.title   {
+    display: grid;
+    justify-content: center;
+    font-family: FantasqueSansMonoRegular;
+    color: antiquewhite;
+    font-size: 35px;
+    min-height: 100px;
+}
+
+h1 {
+    display: grid;
+    justify-content: center;
+    margin: 10px;
+}
+
+h6 {
+    margin: 10px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    min-height: 50px;
+}
+
+a {
+    padding: 10px;
+    font-family: FantasqueSansMonoRegular;
+    color:rgb(255, 255, 148);
+    font-size: 20px;
+}
+
+
