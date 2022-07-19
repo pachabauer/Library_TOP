@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LIBRARY</title>
     <link rel="stylesheet" href="style.css">
+    <script src="code.js" defer></script>
 
 </head>
 <body>
@@ -15,28 +16,28 @@
     </header>
 
     <div class="addingBook">
-        <button>ADD NEW BOOK</button>
-        <form action="/action_page.html">
+        <button data-addButton>ADD NEW BOOK</button>
+        <form action="/action_page.html" data-form >
             <h2>BOOK INFO</h2>
             <label for="title">Title</label>
-            <input type="text" id="title" value="The Lord of the Rings ">
+            <input type="text" id="title" value="The Lord of the Rings " required>
             <label for="author">Author</label>
-            <input type="text" id="author" value="JRR Tolkien">
+            <input type="text" id="author" value="JRR Tolkien" required >
             <label for="pages">Pages</label>
-            <input type="number" id="pages" value=1004><br><br>
+            <input type="number" id="pages" value=1004 required><br><br>
         </form>
 
-        <img src="images/play.png" alt="">
+        <img src="images/play.png" data-img1>
 
         
-        <label class="read"> 
+        <label class="read" data-readButton> 
             <input type="checkbox">
             <span class="slider"></span>
         </label>
 
-        <img src="images/play.png" alt="">
+        <img src="images/play.png" data-img2>
 
-        <img src="images/check.png" alt="">
+        <img src="images/check.png" data-check>
 
 
     </div>
