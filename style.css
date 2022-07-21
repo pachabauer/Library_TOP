@@ -57,7 +57,7 @@ form {
 }
 
 .addingBook img { 
-    margin: 40px;
+    margin: 10px;
 }
 
 .addingBook h2,
@@ -78,12 +78,17 @@ label {
   display: inline-block;
   width: 60px;
   height: 34px;
-  margin: 80px;
+  margin: 30px;
 }
 
 .addingBook .read h2 {
     color: firebrick; 
 }
+
+.addingBook img .checkOk { 
+  margin: 50px;
+} 
+ 
 
 .slider {
   position: absolute;
