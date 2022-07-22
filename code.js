@@ -3,11 +3,12 @@ const dataImg1 = document.querySelector("[data-img1]");
 const dataRead = document.querySelector("[data-readButton]");
 const dataImg2 = document.querySelector("[data-img2]");
 const dataCheck = document.querySelector("[data-check]");
-const read = document.querySelector(".checkbox");
 
 const title = document.querySelector("#title");
 const author = document.querySelector("#author");
 const pages = document.querySelector("#pages");
+const read = document.querySelector(".checkbox");
+const bookInfo = document.querySelectorAll(".books");
 
 dataForm.style.visibility = "hidden";
 dataImg1.style.visibility = "hidden";
@@ -25,19 +26,22 @@ addNewBook.addEventListener("click", () => {
 
 const firstOk = document.querySelector("[data-img1]");
 firstOk.addEventListener("click", () => {
-  console.log(title.value);
-  console.log(author.value);
-  console.log(pages.value);
   dataRead.style.visibility = "visible";
   dataImg2.style.visibility = "visible";
 });
 
 const secondOk = document.querySelector("[data-img2]");
 secondOk.addEventListener("click", () => {
-  console.log(title.value);
-  console.log(author.value);
-  console.log(pages.value);
-  console.log(read.checked);
+  const newBook = new Book(
+    title.value,
+    author.value,
+    pages.value,
+    read.checked
+  );
+  console.log(newBook);
+  addToLibrary(newBook);
+  showLibrary();
+
   dataCheck.style.visibility = "visible";
   dataForm.style.visibility = "hidden";
   dataImg1.style.visibility = "hidden";
@@ -46,20 +50,35 @@ secondOk.addEventListener("click", () => {
 });
 
 class Book {
-    constructor(idTitle, idAuthor, idPages, idRead) {
-      this.idTitle = idTitle;
-      this.idAuthor = idAuthor;
-      this.idPages = idPages;
-      this.idRead = idRead;
-    }
-  
-    clearForm() {
-      this.idTitle.value = "";
-      this.idAuthor.value = "";
-      this.idPages.value = "";
-      this.idRead = false;
-    }
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+    Book.prototype.info = function () {
+      console.log(this.title, this.author, this.pages, this.read);
+    };
   }
-  
-  const newBook = new Book(title, author, pages, read);
-  console.log(newBook)
+
+  clearForm() {
+    this.title.value = "";
+    this.author.value = "";
+    this.pages.value = "";
+    this.read = false;
+  }
+}
+
+let myLibrary = [];
+
+function addToLibrary(book) {
+  myLibrary.push(book);
+}
+
+function showLibrary() {
+  let books = document.createElement("div");
+  books.className = "books";
+  books.textContent = myLibrary[myLibrary.length - 1].title;
+  document.querySelector(".library").appendChild(books);
+}
+
+const newBook = new Book(title, author, pages, read);
