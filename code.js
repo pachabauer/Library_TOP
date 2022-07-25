@@ -86,8 +86,6 @@ function removeFromLibrary(id){
   
 }
 
-
-
 function showLibrary() {
   let books = document.createElement("ul");
   const showTitle = document.createElement('li');
