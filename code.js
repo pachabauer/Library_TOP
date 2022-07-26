@@ -7,7 +7,7 @@ const dataCheck = document.querySelector("[data-check]");
 const title = document.querySelector("#title");
 const author = document.querySelector("#author");
 const pages = document.querySelector("#pages");
-const read = document.querySelector(".checkbox");
+const read = document.querySelector(".toggle-checkbox");
 const bookInfo = document.querySelectorAll(".books");
 
 // initial visibility setting
@@ -42,10 +42,8 @@ secondOk.addEventListener("click", () => {
     pages.value,
     read.checked
   );
-  console.log(newBook);
   addToLibrary(newBook);
   showLibrary();
-  console.log(myLibrary);
 
   dataCheck.style.visibility = "visible";
   dataForm.style.visibility = "hidden";
@@ -112,11 +110,11 @@ function showLibrary() {
     console.log(idRemove)
     removeFromLibrary(idRemove);
 
-    let menu = document.getElementById(idRemove);
-    while (menu.firstChild) {
-      menu.removeChild(menu.firstChild);
+    let removeShowItem = document.getElementById(idRemove);
+    while (removeShowItem.firstChild) {
+      removeShowItem.removeChild(removeShowItem.firstChild);
     }
-    menu.remove();
+    removeShowItem.remove();
   })
 })
 }

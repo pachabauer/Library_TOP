@@ -20,21 +20,21 @@
         <form action="/action_page.html" data-form >
             <h2>BOOK INFO</h2>
             <label for="title">Title</label>
-            <input type="text" id="title" value="The Lord of the Rings " required>
+            <input type="text" id="title" required />
             <label for="author">Author</label>
-            <input type="text" id="author" value="JRR Tolkien" required >
+            <input type="text" id="author" required />
             <label for="pages">Pages</label>
-            <input type="number" id="pages" value=1004 required><br><br>
+            <input type="number" id="pages" required/><br><br>
         </form>
 
         <img src="images/play.png" data-img1>
 
         
-        <label class="read" data-readButton> 
-            <input type="checkbox" class="checkbox" id="">
-            <span class="slider"></span>
-            <p>NO-YES</p>
-        </label>
+        <label class="toggle" data-readButton>
+            <input class="toggle-checkbox" type="checkbox" checked>
+            <div class="toggle-switch"></div>
+            <span class="toggle-label">READ</span>
+          </label>
 
         <img src="images/play.png" data-img2>
 
